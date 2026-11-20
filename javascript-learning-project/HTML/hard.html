@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f25">
+  <meta name="description" content="Learn advanced JavaScript by tracing one small step at a time, with editable code, playful hints, and no penalties.">
+  <title>Hard Orbit · JavaScript Space Lab</title>
+  <link rel="stylesheet" href="../CSS/space-lab.css">
+  <script src="../JS/hard-lessons.js" defer></script>
+  <script src="../JS/space-lab.js" defer></script>
+</head>
+<body data-level="hard">
+  <main class="board">
+    <header class="topbar"><div class="brand-wrap"><a class="brand" href="index.html">✦ JavaScript Space Lab</a><span class="lesson-index">/ Hard Orbit</span></div>
+      <nav class="top-actions" aria-label="Learning levels">
+        <a class="page-link" href="index.html">Beginner</a><a class="page-link" href="intermediate.html">Intermediate</a><a class="page-link" href="hard.html" aria-current="page">Hard</a><a class="page-link" href="god-mode.html">God Mode</a><a class="page-link" href="coding-challenges.html">Code-it games</a><button class="fullscreen" id="fullscreenBtn" type="button">⛶ Full screen</button>
+      </nav>
+    </header>
+    <section class="hero" aria-labelledby="pageTitle"><div class="hero-copy"><p class="eyebrow">Advanced ideas, gentle pace · Hard level</p><h1 id="pageTitle">Untangle the tricky bits—one thread at a time.</h1><p>Closures, data pipelines, async timing, and recovery. The ideas are advanced; the explanations stay short, and every hint is free.</p></div><div class="hero-chip"><span class="planet" aria-hidden="true">🌌</span><span>Hard does not mean hurried. Pause, trace, and try again.</span></div></section>
+    <section class="workspace" aria-label="Hard JavaScript lesson">
+      <section class="panel" aria-labelledby="editorTitle"><div class="panel-head"><div><h2 id="editorTitle">Your little code lab</h2><p>Edit the example and run it in a separate sandbox.</p></div><span class="section-label">Try it</span></div><div class="editor-wrap">
+        <div class="editor-caption"><span><i class="dot" aria-hidden="true"></i> JavaScript you can change</span><span id="editorLabel">hard.js</span></div><label class="sr-only" for="codeEditor">Editable JavaScript example</label><textarea class="editor" id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editHint"></textarea>
+        <div class="editor-actions"><button class="run-btn" id="runBtn" type="button">▶ Run my code</button><button class="soft-btn" id="resetBtn" type="button">Restore example</button><span class="hintline" id="editHint">Your draft saves as you type. Tab adds two spaces.</span></div>
+        <section class="output" aria-label="JavaScript console output"><div class="output-head"><span>What the console says</span><span id="runStatus">Ready</span></div><div class="output-body" id="outputBody" aria-live="polite" aria-atomic="true"><span class="output-placeholder">Run it to see the values and timing.</span></div></section>
+      </div></section>
+      <div class="side-stack">
+        <section class="panel mission-card" aria-labelledby="missionTitle"><div class="panel-head"><div><h2>Mini-game: Logic Tangle</h2><p>Untie one knot. Hints are unlimited and penalty-free.</p></div><span class="section-label">No penalties</span></div><div class="mission-meta"><span class="game-tag" id="gameTag">🧵 Loading game</span><span class="progress-text" id="missionNumber">Mission 1</span></div><div class="mission-content">
+          <h3 class="mission-title" id="missionTitle">Loading your first tiny mission…</h3><p class="mission-explain" id="missionExplain">A short, plain-English idea will appear here.</p><div class="question-box"><p class="question-step" id="questionStep">Tiny step 1</p><p class="question-prompt" id="questionPrompt">Your question is getting ready.</p><label class="answer-label" for="answerInput">Your guess</label><div class="answer-row"><input class="answer-input" id="answerInput" type="text" autocomplete="off" placeholder="Type your guess…"><button class="check-btn" id="checkAnswerBtn" type="button">Check guess</button></div><p class="feedback" id="answerFeedback" role="status" aria-live="polite">Try your best guess first.</p><div class="answer-reveal" id="answerReveal" aria-live="polite"></div><div class="hint-actions"><button class="hint-btn" id="hintBtn" type="button">🪄 Give me a hint</button><span class="hint-box" id="hintText" aria-live="polite">Need a nudge? Ask as often as you like—no score loss, ever.</span></div><div class="next-row"><small id="starCount">✦ 0 stars</small><button class="next-btn" id="nextStepBtn" type="button" disabled>Next tiny step →</button></div></div></div></section>
+        <aside class="panel reference-panel" aria-labelledby="referenceHeading"><div class="panel-head"><div><h2 id="referenceHeading">Your always-here reference</h2><p>Small tools, kept beside your code.</p></div><span class="section-label">Cheat sheet</span></div><div class="reference-body"><h3 class="reference-title" id="referenceTitle">Little reminder</h3><p id="referenceCopy">Tiny syntax notes for this mission.</p><pre class="reference-code"><code id="referenceCode">await Promise.all(tasks);</code></pre><p class="reference-tip" id="referenceTip">Look here whenever you like.</p></div></aside>
+      </div>
+    </section>
+    <footer class="footnote"><span id="progressSummary">Your small wins will be saved on this device.</span><span>Questions move only when you press Next · Hints are always free</span></footer>
+  </main><iframe id="runner" title="Private JavaScript practice runner" sandbox="allow-scripts" hidden></iframe>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09142f">
+  <meta name="description" content="Write JavaScript solutions yourself, run them, and check them against hidden tests in the JavaScript Space Lab.">
+  <title>Code Challenges — JavaScript Space Lab</title>
+  <link rel="stylesheet" href="../CSS/coding-challenges.css">
+  <script src="../JS/coding-challenges.js" defer></script>
+</head>
+<body>
+  <main class="board">
+    <header class="topbar">
+      <div><a class="brand" href="index.html">JavaScript Space Lab</a><span class="lesson-index">/ Code challenges</span></div>
+      <nav class="top-actions" aria-label="Practice navigation">
+        <a class="page-link" href="index.html">Beginner</a>
+        <a class="page-link" href="intermediate.html">Intermediate</a>
+        <a class="page-link" href="hard.html">Hard Mode</a>
+        <a class="page-link" href="god-mode.html">God Mode</a>
+        <span class="pill">Write your own code</span>
+        <button class="fullscreen" id="fullscreenBtn" type="button" aria-label="Make challenge page full screen">⛶ Full screen</button>
+      </nav>
+    </header>
+
+    <section class="intro" aria-labelledby="pageTitle">
+      <p class="eyebrow">Your turn at the controls · Code lab</p>
+      <h1 id="pageTitle">You write the code. The tests guide you.</h1>
+      <p>Read the mission, write a JavaScript function, run it, and check it against hidden tests. Wrong attempts never reveal the answer, and hints are unlimited.</p>
+    </section>
+
+    <section class="difficulty-bar" aria-label="Challenge difficulty">
+      <label for="difficultySelect">Choose your flight path</label>
+      <select id="difficultySelect">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="hard">Hard</option>
+      </select>
+      <p id="difficultyDescription">Build confidence with strings, numbers, and arrays.</p>
+      <span class="difficulty-count" id="difficultyCount" aria-live="polite"></span>
+    </section>
+
+    <section class="challenge-layout" aria-label="Coding mission and editor">
+      <section class="panel mission-panel" aria-labelledby="challengeTitle">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow" id="challengeTopic">Loading mission</p>
+            <h2 id="challengeTitle">Preparing your challenge…</h2>
+          </div>
+          <span class="section-label">Mission brief</span>
+        </div>
+        <div class="mission-content">
+          <p class="challenge-summary" id="challengeSummary"></p>
+          <h3>What your function should do</h3>
+          <ul class="requirements" id="requirementsList"></ul>
+          <div class="example-grid">
+            <section class="example-card">
+              <h3>Example input</h3>
+              <pre id="exampleInput"></pre>
+            </section>
+            <section class="example-card">
+              <h3>Expected output</h3>
+              <pre id="exampleOutput"></pre>
+            </section>
+          </div>
+          <aside class="hint-card" id="hintCard" aria-live="polite">
+            <strong id="hintHeading">Need a nudge?</strong>
+            <p id="hintText">Ask for as many hints as you like. They guide your next step without giving away the full solution.</p>
+          </aside>
+          <div class="mission-actions">
+            <button class="hint-button" id="hintBtn" type="button">Get a hint</button>
+            <button class="next-button" id="nextChallengeBtn" type="button" hidden>Next challenge ↗</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel reference-panel" id="referencePanel" aria-labelledby="referenceTitle" hidden>
+        <div class="reference-head">
+          <div>
+            <p class="eyebrow">Solution reference</p>
+            <h2 id="referenceTitle">Positive numbers</h2>
+          </div>
+          <span class="section-label">Current challenge</span>
+        </div>
+        <div class="reference-content">
+          <p>This example adds only values greater than zero. Keep it beside your editor while you work.</p>
+          <pre class="reference-code"><code>function solve(input) {
+  let total = 0;
+  for (let num of input) {
+    if (num &gt; 0) {
+      total += num;
+    }
+  }
+  return total;
+}</code></pre>
+        </div>
+      </aside>
+
+      <section class="panel editor-panel" aria-labelledby="editorTitle">
+        <div class="panel-head">
+          <div><h2 id="editorTitle">Build your solution</h2><p>Write a function named <code>solve</code> that accepts one input.</p></div>
+          <span class="section-label">Your code</span>
+        </div>
+        <div class="editor-wrap">
+          <div class="editor-caption"><span><i class="dot" aria-hidden="true"></i> Editable JavaScript</span><span id="editorLabel">solve(input)</span></div>
+          <label class="sr-only" for="solutionEditor">Write your JavaScript solution here</label>
+          <textarea id="solutionEditor" class="editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editorHelp"></textarea>
+          <p class="editor-help" id="editorHelp">Tab inserts two spaces. Select lines and press Tab to indent, or Shift+Tab to unindent.</p>
+          <div class="editor-actions">
+            <button class="run-button" id="runBtn" type="button">▶ Run example</button>
+            <button class="check-button" id="checkBtn" type="button">Check solution</button>
+            <button class="reset-button" id="resetBtn" type="button">Reset starter</button>
+          </div>
+          <section class="console-panel" aria-labelledby="consoleTitle">
+            <div class="console-head"><h3 id="consoleTitle">Console</h3><span id="runStatus">Ready</span></div>
+            <pre id="runOutput" aria-live="polite">Run your function to see its return value here.</pre>
+          </section>
+          <p class="feedback" id="feedback" role="status" aria-live="polite">Your solution is checked against hidden test cases. Expected answers stay hidden after incorrect attempts.</p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="bottomline">
+      <span>Hint as often as you like—there is no limit or penalty.</span>
+      <span>Pass the hidden checks to unlock another challenge.</span>
+    </footer>
+  </main>
+
+  <iframe id="runner" title="Isolated JavaScript solution runner" sandbox="allow-scripts" hidden></iframe>
+</body>
+</html>
